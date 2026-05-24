@@ -3,22 +3,23 @@ using UnityEngine.InputSystem;
 
 public class InteractionDetector : MonoBehaviour
 {
-
     private IInteractable interactableInRange = null; //closest interactable object in range
 
-    private void Update()
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.E)) //for testing purposes, we can use the E key to interact with objects in range
         {
             if (interactableInRange != null)
             {
                 interactableInRange.Interact();
+
+                Debug.Log("in range");
             }
 
             Debug.Log("interact");
         }
 
-        Debug.Log("interact");
+
     }
 
 
@@ -27,6 +28,8 @@ public class InteractionDetector : MonoBehaviour
         if(collision.TryGetComponent(out IInteractable interactable) && interactable.CanInteract())
         {
             interactableInRange = interactable;
+
+            Debug.Log("interactable");
         }
     }
 

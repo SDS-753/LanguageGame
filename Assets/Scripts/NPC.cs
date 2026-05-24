@@ -53,7 +53,7 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]); //auto-complete the line if player tries to skip while it's still typing
             isTyping = false;
         }
-        else if(dialogueIndex + 1 < dialogueData.dialogueLines.Length)
+        else if(++dialogueIndex < dialogueData.dialogueLines.Length)
         {
             StartCoroutine(TypeLine()); //if another line, type it out
         }
