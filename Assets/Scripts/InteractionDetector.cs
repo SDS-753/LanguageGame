@@ -14,7 +14,11 @@ public class InteractionDetector : MonoBehaviour
             {
                 interactableInRange.Interact();
             }
+
+            Debug.Log("interact");
         }
+
+        Debug.Log("interact");
     }
 
 
